@@ -1,0 +1,31 @@
+{
+  "name" : "tt-versioncontrol",
+  "description" : "",
+  "role" : "arn:aws:iam::804918391416:role/Admin",
+  "executionProperty" : {
+    "maxConcurrentRuns" : 1
+  },
+  "command" : {
+    "name" : "pythonshell",
+    "scriptLocation" : "s3://aws-glue-assets-804918391416-us-east-1/scripts/tt-versioncontrol.py",
+    "pythonVersion" : "3"
+  },
+  "defaultArguments" : {
+    "--enable-job-insights" : "false",
+    "--job-language" : "python",
+    "--TempDir" : "s3://aws-glue-assets-804918391416-us-east-1/temporary/",
+    "--enable-glue-datacatalog" : "true"
+  },
+  "maxRetries" : 0,
+  "allocatedCapacity" : 0,
+  "timeout" : 2880,
+  "maxCapacity" : 0.0625,
+  "glueVersion" : "1.0",
+  "executionClass" : "STANDARD",
+  "sourceControlDetails" : {
+    "provider" : "GITHUB",
+    "repository" : "glue",
+    "branch" : "main",
+    "folder" : "tt-versioncontrol"
+  }
+}
